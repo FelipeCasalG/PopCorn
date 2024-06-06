@@ -1,0 +1,15 @@
+#! /usr/bin/env php
+<?php
+
+use Acme\ShowCommand;
+use Symfony\Component\Console\Application;
+
+require 'vendor/autoload.php';
+
+$application = new Application('PopCorn Console App', '1.0.0');
+
+$application->add(new ShowCommand(new GuzzleHttp\Client));
+
+$application->run();
+
+?>
